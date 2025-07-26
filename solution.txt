@@ -1,2 +1,27 @@
 Please add your pseudocode to this file
+Initialize an empty array called result
+
+Loop through the string using index i from 0 to string.length - 1
+    For each index i:
+        Loop through the string using index j from i + 1 to string.length
+            Slice the substring from index i to j
+            Add the substring to the result array
+
+Return the result array
 And a written explanation of your solution
+Explanation of the Solution:
+
+This function generates all consecutive substrings from a given input string. It works by using two nested loops:
+	•	The outer loop (i) marks the starting index of the substring.
+	•	The inner loop (j) marks the end index (non-inclusive) of the substring.
+	•	For each valid pair of i and j, we use slice(i, j) to extract the substring and store it in the result array.
+
+This approach ensures that we capture every possible substring that is made up of consecutive characters in the original order. It avoids skipped characters (e.g., “ac”) because each substring is built from continuous indices.
+
+⸻
+
+Time Complexity:
+	•	Time Complexity: O(n²)
+The algorithm uses a nested loop — the outer loop runs n times and the inner loop runs up to n - i times. In the worst case (e.g., full string input), this results in roughly (n * (n + 1)) / 2 iterations.
+	•	Space Complexity: O(n²)
+We store all substrings in the result array, which can grow up to n(n+1)/2 elements, where n is the length of the input string.
